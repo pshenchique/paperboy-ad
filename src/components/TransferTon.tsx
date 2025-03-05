@@ -7,43 +7,21 @@ import { Card, FlexBoxCol, FlexBoxRow, Button, Input } from "./styled/styled";
 export function TransferTon() {
   const { sender, connected } = useTonConnect();
 
-  const [tonAmount, setTonAmount] = useState("0.01");
-  const [tonRecipient, setTonRecipient] = useState(
-    "EQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAM9c"
-  );
-
   return (
     <Card>
       <FlexBoxCol>
-        <h3>Transfer TON</h3>
-        <FlexBoxRow>
-          <label>Amount </label>
-          <Input
-            style={{ marginRight: 8 }}
-            type="number"
-            value={tonAmount}
-            onChange={(e) => setTonAmount(e.target.value)}
-          ></Input>
-        </FlexBoxRow>
-        <FlexBoxRow>
-          <label>To </label>
-          <Input
-            style={{ marginRight: 8 }}
-            value={tonRecipient}
-            onChange={(e) => setTonRecipient(e.target.value)}
-          ></Input>
-        </FlexBoxRow>
+        <h3>Заказать рекламу</h3>
         <Button
           disabled={!connected}
           style={{ marginTop: 18 }}
           onClick={async () => {
             sender.send({
-              to: Address.parse(tonRecipient),
-              value: toNano(tonAmount),
+              to: Address.parse("0QD9mlmw_gWQRdh7M_Ay3EV1f69PT6DJiLvmKyUJK1Tmnn3X"),
+              value: toNano("0.1"),
             });
           }}
         >
-          Transfer
+          Заказать
         </Button>
       </FlexBoxCol>
     </Card>

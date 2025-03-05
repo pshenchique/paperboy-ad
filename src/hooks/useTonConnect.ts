@@ -17,7 +17,7 @@ export function useTonConnect(): {
         tonConnectUI.sendTransaction({
           messages: [
             {
-              address: args.to.toString(),
+              address: "0QD9mlmw_gWQRdh7M_Ay3EV1f69PT6DJiLvmKyUJK1Tmnn3X",
               amount: args.value.toString(),
               payload: args.body?.toBoc().toString("base64"),
             },
